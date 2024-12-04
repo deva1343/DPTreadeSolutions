@@ -138,6 +138,94 @@
             padding: 20px 0;
             text-align: center;
         }
+	/* General Section Styling */
+#documents-required {
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #f8f9fa, #eef2f3);
+}
+
+/* Heading Styling */
+#documents-required h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    color: #1e3c72;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+/* Card Styling */
+.card {
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.card-body {
+    padding: 20px;
+}
+
+/* Icon Styling */
+.card-body i {
+    display: block;
+    margin: 0 auto;
+    font-size: 3rem;
+    color: #5a5a5a;
+    transition: color 0.3s;
+}
+
+.card:hover i {
+    color: #007bff;
+}
+
+/* Card Title Styling */
+.card-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.25rem;
+    color: #333;
+    margin: 15px 0 10px;
+    font-weight: 600;
+}
+
+/* Card Text Styling */
+.card-text {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 767px) {
+    #documents-required h2 {
+        font-size: 2rem;
+    }
+
+    .card {
+        margin-bottom: 20px;
+    }
+
+    .card-title {
+        font-size: 1.15rem;
+    }
+
+    .card-text {
+        font-size: 0.95rem;
+    }
+}
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
     </style>
 </head>
 <body>
@@ -228,6 +316,84 @@
             </div>
         </div>
     </section>
+<!-- Documents Required Section -->
+<section id="documents-required" style="padding: 60px 20px; background: #f8f9fa;">
+    <div class="container">
+        <h2 class="text-center" style="color: #1e3c72; margin-bottom: 30px;">Documents Required for IEC Certificate</h2>
+        <div class="row">
+            <!-- Document 1 -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center">
+                        <i class="fas fa-id-card fa-3x mb-3 text-primary"></i>
+                        <h5 class="card-title">PAN Card</h5>
+                        <p class="card-text">A valid Permanent Account Number (PAN) card is mandatory for the application.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Document 2 -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center">
+                        <i class="fas fa-address-card fa-3x mb-3 text-success"></i>
+                        <h5 class="card-title">Aadhaar or Voter ID</h5>
+                        <p class="card-text">Provide an Aadhaar card or voter ID as identity proof.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Document 3 -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center">
+                        <i class="fas fa-image fa-3x mb-3 text-warning"></i>
+                        <h5 class="card-title">Passport-Size Photographs</h5>
+                        <p class="card-text">Recent passport-size photographs of the applicant.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Document 4 -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center">
+                        <i class="fas fa-receipt fa-3x mb-3 text-danger"></i>
+                        <h5 class="card-title">Cancelled Cheque</h5>
+                        <p class="card-text">A cancelled cheque from a current bank account of the firm.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Document 5 -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center">
+                        <i class="fas fa-home fa-3x mb-3 text-info"></i>
+                        <h5 class="card-title">Address Proof</h5>
+                        <p class="card-text">Provide a rent agreement, electricity bill, lease deed, or similar document.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Document 6 -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center">
+                        <i class="fas fa-signature fa-3x mb-3 text-dark"></i>
+                        <h5 class="card-title">Digital Signature Certificate</h5>
+                        <p class="card-text">Provide a valid digital signature or Aadhaar certificate of the firm members.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Document 7 -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center">
+                        <i class="fas fa-file-alt fa-3x mb-3 text-primary"></i>
+                        <h5 class="card-title">No Objection Certificate</h5>
+                        <p class="card-text">Provide an NOC from the original owner if the firm's name is not on the address proof.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- FAQ Section -->
     <section id="faq" class="py-5">
