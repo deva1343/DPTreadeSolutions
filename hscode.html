@@ -4,8 +4,92 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HS Code Finder</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.0.0/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .bg-gray-900 {
+            background-color: #121212;
+        }
+
+        .text-white {
+            color: white;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .search-bar {
+            background-color: #2d2d2d;
+            border: 1px solid #444;
+            color: white;
+        }
+
+        .search-bar:focus {
+            outline: none;
+            border-color: #4f81bd;
+        }
+
+        .faq-button {
+            background-color: #333;
+            color: white;
+            width: 100%;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            text-align: left;
+        }
+
+        .faq-content {
+            padding: 10px;
+            background-color: #444;
+            margin-top: 8px;
+        }
+
+        .faq-button:hover {
+            background-color: #555;
+        }
+
+        .faq-item + .faq-item {
+            margin-top: 12px;
+        }
+
+        /* Policy Card Styles */
+        .policy-card {
+            background-color: #333;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 16px;
+        }
+
+        .policy-card h3 {
+            font-size: 1.2rem;
+        }
+
+        .policy-card p {
+            margin-top: 10px;
+            font-size: 1rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .container {
+                padding: 0 16px;
+            }
+        }
+    </style>
 </head>
 <body class="bg-gray-900 text-white">
 
@@ -109,6 +193,27 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="scripts.js"></script>
+    <script>
+        // Common functionality (search, FAQ, etc.)
+        document.getElementById('search-bar')?.addEventListener('input', function () {
+            const searchQuery = this.value.toLowerCase();
+            if (searchQuery.length > 2) {
+                searchPolicies(searchQuery);
+            }
+        });
+
+        function searchPolicies(query) {
+            // Your search functionality
+            console.log('Searching for:', query);
+        }
+
+        // FAQ Accordion functionality
+        document.querySelectorAll('.faq-button').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                content.classList.toggle('hidden');
+            });
+        });
+    </script>
 </body>
 </html>
