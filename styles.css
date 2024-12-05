@@ -1,0 +1,79 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+}
+
+.bg-gray-900 {
+    background-color: #121212;
+}
+
+.text-white {
+    color: white;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.search-bar {
+    background-color: #2d2d2d;
+    border: 1px solid #444;
+    color: white;
+}
+
+.search-bar:focus {
+    outline: none;
+    border-color: #4f81bd;
+}
+
+.btn-category {
+    font-size: 16px;
+}
+
+.category-card:hover {
+    background-color: #3b3b3b;
+}
+
+.faq-button {
+    background-color: #333;
+    color: white;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+}
+
+.faq-content {
+    padding: 10px;
+    background-color: #444;
+    margin-top: 8px;
+}
+
+.faq-button:hover {
+    background-color: #555;
+}
+
+.faq-item + .faq-item {
+    margin-top: 12px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .category-card {
+        padding: 16px;
+    }
+
+    .container {
+        padding: 0 16px;
+    }
+}

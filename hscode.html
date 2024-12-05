@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HS Code Finder</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.0.0/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-900 text-white">
+
+    <!-- Header Section -->
+    <header class="fixed top-0 left-0 w-full bg-gray-800 py-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="/" class="text-2xl font-bold">HS Code Finder</a>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="#" class="hover:underline">Home</a></li>
+                    <li><a href="#about" class="hover:underline">About</a></li>
+                    <li><a href="#contact" class="hover:underline">Contact</a></li>
+                    <li><a href="#faq" class="hover:underline">FAQ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero bg-gray-700 text-center py-16">
+        <h1 class="text-4xl font-bold">Quickly Find Your HS Codes for Import/Export</h1>
+        <p class="mt-4 text-lg">Search by Product Name, Keywords, or Browse Popular Categories</p>
+        <div class="mt-8">
+            <input type="text" id="search-bar" class="search-bar p-2 w-3/4 md:w-1/2 text-xl rounded" placeholder="Enter product name or HS code..." />
+            <button class="mt-4 py-2 px-6 bg-blue-500 rounded text-white">Search</button>
+        </div>
+        <div class="mt-8">
+            <a href="#categories" class="btn-category bg-green-500 px-4 py-2 rounded">Browse by Category</a>
+        </div>
+    </section>
+
+    <!-- Main Content Section -->
+    <main class="container mx-auto mt-20">
+
+        <!-- Search Results Section -->
+        <section id="search-results" class="mb-16">
+            <h2 class="text-2xl font-semibold">Search Results</h2>
+            <div id="results-list" class="mt-4">
+                <!-- Dynamic results will be displayed here -->
+            </div>
+        </section>
+
+        <!-- Browse by Category Section -->
+        <section id="categories">
+            <h2 class="text-2xl font-semibold mb-4">Browse by Category</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                <div class="category-card bg-gray-600 p-4 rounded">
+                    <h3 class="text-xl font-medium">Electronics</h3>
+                </div>
+                <div class="category-card bg-gray-600 p-4 rounded">
+                    <h3 class="text-xl font-medium">Textiles</h3>
+                </div>
+                <div class="category-card bg-gray-600 p-4 rounded">
+                    <h3 class="text-xl font-medium">Machinery</h3>
+                </div>
+                <div class="category-card bg-gray-600 p-4 rounded">
+                    <h3 class="text-xl font-medium">Furniture</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- Informational Section -->
+        <section id="about" class="mt-16">
+            <h2 class="text-2xl font-semibold">What are HS Codes?</h2>
+            <p class="mt-4">HS Codes are numerical codes used by customs to classify products for import and export.</p>
+            <div id="faq" class="mt-8">
+                <h3 class="text-xl font-medium">FAQ</h3>
+                <div class="accordion mt-4">
+                    <div class="faq-item">
+                        <button class="faq-button">How to use HS codes?</button>
+                        <div class="faq-content hidden">
+                            <p>HS codes help in identifying products for trade compliance and tariff purposes.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-button">Where are they applicable?</button>
+                        <div class="faq-content hidden">
+                            <p>They are used by governments and trade organizations worldwide to track imports and exports.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-800 py-8">
+        <div class="container mx-auto flex justify-between items-center">
+            <div>
+                <ul class="flex space-x-6">
+                    <li><a href="#" class="text-white">Home</a></li>
+                    <li><a href="#about" class="text-white">About</a></li>
+                    <li><a href="#contact" class="text-white">Contact</a></li>
+                    <li><a href="#faq" class="text-white">FAQ</a></li>
+                </ul>
+            </div>
+            <div>
+                <p class="text-white text-sm">© 2024 HS Code Finder. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="scripts.js"></script>
+</body>
+</html>
