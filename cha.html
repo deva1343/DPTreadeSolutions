@@ -190,12 +190,6 @@
         </form>
     </section>
 
-    <!-- Hero Section -->
-    <section>
-        <h1>Contact Information for Custom House Agents</h1>
-        <p>Find trusted CHAs in metro cities or add your own contact details if you're a CHA!</p>
-    </section>
-
     <!-- City List -->
     <section id="city-list">
         <h2>Available Cities</h2>
@@ -203,40 +197,19 @@
             <li>
                 <span class="city-entry" onclick="toggleCity('mumbai-list')">+ Mumbai</span>
                 <ul id="mumbai-list" class="cha-list">
-                    <li class="cha-entry">
-                        <h3>John Doe</h3>
-                        <p>Phone: +91 123 456 7890 | Email: john@cha.com</p>
-                    </li>
-                    <li class="cha-entry">
-                        <h3>Jane Smith</h3>
-                        <p>Phone: +91 987 654 3210 | Email: jane@cha.com</p>
-                    </li>
+                    <!-- CHA entries will be dynamically inserted here -->
                 </ul>
             </li>
             <li>
                 <span class="city-entry" onclick="toggleCity('delhi-list')">+ Delhi</span>
                 <ul id="delhi-list" class="cha-list">
-                    <li class="cha-entry">
-                        <h3>Raj Kumar</h3>
-                        <p>Phone: +91 876 543 2100 | Email: raj@cha.com</p>
-                    </li>
-                    <li class="cha-entry">
-                        <h3>Anita Mehta</h3>
-                        <p>Phone: +91 654 321 0987 | Email: anita@cha.com</p>
-                    </li>
+                    <!-- CHA entries will be dynamically inserted here -->
                 </ul>
             </li>
             <li>
                 <span class="city-entry" onclick="toggleCity('bangalore-list')">+ Bangalore</span>
                 <ul id="bangalore-list" class="cha-list">
-                    <li class="cha-entry">
-                        <h3>Shiv Kumar</h3>
-                        <p>Phone: +91 999 888 7777 | Email: shiv@cha.com</p>
-                    </li>
-                    <li class="cha-entry">
-                        <h3>Priya Rani</h3>
-                        <p>Phone: +91 888 777 6666 | Email: priya@cha.com</p>
-                    </li>
+                    <!-- CHA entries will be dynamically inserted here -->
                 </ul>
             </li>
             <!-- Add other cities here with similar structure -->
@@ -282,13 +255,31 @@
             .then(response => response.json())
             .then(data => {
                 alert('CHA added successfully');
+                // Dynamically update the city list with the new CHA entry
+                addCHAEntry(data.city, data);
                 // Optionally, clear the form or update UI with new CHA data
+                document.getElementById('cha-form').reset();
             })
             .catch(error => {
                 console.error('Error:', error);
-                alert('An error occurred');
+                alert('An error occurred while submitting the form');
             });
         });
+
+        // Dynamically add CHA entry to the city list
+        function addCHAEntry(city, cha) {
+            const cityList = document.getElementById(city.toLowerCase() + '-list');
+            const chaEntry = document.createElement('li');
+            chaEntry.classList.add('cha-entry');
+            chaEntry.innerHTML = `
+                <h3>${cha.name}</h3>
+                <p><strong>Phone:</strong> ${cha.phone}</p>
+                <p><strong>Email:</strong> ${cha.email}</p>
+                <p><strong>Address:</strong> ${cha.address}</p>
+                <p><strong>Services:</strong> ${cha.services}</p>
+            `;
+            cityList.appendChild(chaEntry);
+        }
     </script>
 
 </body>
