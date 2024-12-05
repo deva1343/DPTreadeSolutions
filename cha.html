@@ -129,27 +129,27 @@
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3">
-        <div class="container">
-            <a class="navbar-brand" href="#">IEC Registration</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" href="https://deva1343.github.io/DPTreadeSolutions/index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://deva1343.github.io/DPTreadeSolutions/hscode.html">HS Code</a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://deva1343.github.io/DPTreadeSolutions/aboutus.html">CHA</a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://wa.me/8459756243?text=hi,%20can%20I%20get%20more%20information%20about%20IEC">Import Export Policies</a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://wa.me/8459756243?text=hi,%20can%20I%20get%20more%20information%20about%20IEC">Documentation</a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://wa.me/8459756243?text=hi,%20can%20I%20get%20more%20information%20about%20IEC">Loan and Finace</a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://deva1343.github.io/DPTreadeSolutions/aboutus.html">About Us</a></li>
-                </ul>
-            </div>
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3">
+    <div class="container">
+        <a class="navbar-brand" href="#">IEC Registration</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link active" href="https://deva1343.github.io/DPTreadeSolutions/index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://deva1343.github.io/DPTreadeSolutions/hscode.html">HS Code</a></li>
+		<li class="nav-item"><a class="nav-link" href="https://deva1343.github.io/DPTreadeSolutions/aboutus.html">CHA</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://wa.me/8459756243?text=hi,%20can%20I%20get%20more%20information%20about%20IEC">Import Export Policies</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://wa.me/8459756243?text=hi,%20can%20I%20get%20more%20information%20about%20IEC">Documentation</a></li>
+		<li class="nav-item"><a class="nav-link" href="https://wa.me/8459756243?text=hi,%20can%20I%20get%20more%20information%20about%20IEC">Loan and Finace</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://deva1343.github.io/DPTreadeSolutions/aboutus.html">About Us</a></li>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
 
-    <!-- Hero Section -->
+  <!-- Hero Section -->
     <section>
         <h1>Contact Information for Custom House Agents</h1>
         <p>Find trusted CHAs in metro cities or add your own contact details if you're a CHA!</p>
@@ -190,6 +190,12 @@
         </form>
     </section>
 
+    <!-- Hero Section -->
+    <section>
+        <h1>Contact Information for Custom House Agents</h1>
+        <p>Find trusted CHAs in metro cities or add your own contact details if you're a CHA!</p>
+    </section>
+
     <!-- City List -->
     <section id="city-list">
         <h2>Available Cities</h2>
@@ -220,52 +226,69 @@
                     </li>
                 </ul>
             </li>
+            <li>
+                <span class="city-entry" onclick="toggleCity('bangalore-list')">+ Bangalore</span>
+                <ul id="bangalore-list" class="cha-list">
+                    <li class="cha-entry">
+                        <h3>Shiv Kumar</h3>
+                        <p>Phone: +91 999 888 7777 | Email: shiv@cha.com</p>
+                    </li>
+                    <li class="cha-entry">
+                        <h3>Priya Rani</h3>
+                        <p>Phone: +91 888 777 6666 | Email: priya@cha.com</p>
+                    </li>
+                </ul>
+            </li>
             <!-- Add other cities here with similar structure -->
         </ul>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Custom House Agents Contact. All rights reserved.</p>
+        <p>&copy; 2024 DPTreade Solutions | All Rights Reserved</p>
     </footer>
 
-    <!-- JavaScript -->
+    <!-- JavaScript for functionality -->
     <script>
+        // Toggle city CHA list visibility
+        function toggleCity(cityId) {
+            const cityList = document.getElementById(cityId);
+            cityList.style.display = cityList.style.display === 'none' ? 'block' : 'none';
+        }
+
         // Handle form submission
-        document.getElementById('cha-form').addEventListener('submit', function (event) {
+        document.getElementById('cha-form').addEventListener('submit', function(event) {
             event.preventDefault();
 
             // Gather form data
-            const name = document.getElementById('name').value;
-            const phone = document.getElementById('phone').value;
-            const email = document.getElementById('email').value;
-            const city = document.getElementById('city').value;
-            const address = document.getElementById('address').value;
-            const services = document.getElementById('services').value;
+            const formData = new FormData(this);
+            const data = {
+                name: formData.get('name'),
+                phone: formData.get('phone'),
+                email: formData.get('email'),
+                city: formData.get('city'),
+                address: formData.get('address'),
+                services: formData.get('services')
+            };
 
-            // Create new CHA entry
-            const chaEntry = document.createElement('li');
-            chaEntry.classList.add('cha-entry');
-            chaEntry.innerHTML = `
-                <h3>${name}</h3>
-                <p>Phone: ${phone} | Email: ${email}</p>
-                <p>Address: ${address}</p>
-                <p>Services: ${services}</p>
-            `;
-
-            // Add to the corresponding city list
-            const cityList = document.getElementById(`${city.toLowerCase()}-list`);
-            cityList.appendChild(chaEntry);
-
-            // Reset the form
-            document.getElementById('cha-form').reset();
+            // Send data to the server (example endpoint)
+            fetch('/api/cha', {
+                method: 'POST',
+                body: JSON.stringify(data),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert('CHA added successfully');
+                // Optionally, clear the form or update UI with new CHA data
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred');
+            });
         });
-
-        // Toggle visibility of CHA list
-        function toggleCity(cityId) {
-            const cityList = document.getElementById(cityId);
-            cityList.style.display = (cityList.style.display === 'none' || cityList.style.display === '') ? 'block' : 'none';
-        }
     </script>
 
 </body>
