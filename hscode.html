@@ -7,26 +7,76 @@
     <style>
         /* Global Styles */
         body {
-            font-family: Arial, sans-serif;
-        }
-
-        .bg-gray-900 {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
             background-color: #121212;
-        }
-
-        .text-white {
-            color: white;
+            color: #f5f5f5;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Navbar Styles */
+        nav.navbar {
+            background-color: #1e1e1e;
+            padding: 10px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        nav.navbar .navbar-nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav.navbar .nav-link {
+            color: #f5f5f5;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 8px 16px;
+        }
+
+        nav.navbar .nav-link:hover {
+            color: #4f81bd;
+        }
+
+        /* Hero Section Styles */
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            background: linear-gradient(90deg, #3a7bd5, #3a6073);
+            color: #fff;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .search-bar-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
         }
 
         .search-bar {
             background-color: #2d2d2d;
             border: 1px solid #444;
-            color: white;
+            color: #f5f5f5;
+            padding: 15px;
+            width: 70%;
+            font-size: 1rem;
+            border-radius: 8px;
         }
 
         .search-bar:focus {
@@ -34,186 +84,150 @@
             border-color: #4f81bd;
         }
 
-        .faq-button {
-            background-color: #333;
-            color: white;
-            width: 100%;
-            padding: 10px;
+        .search-btn {
+            background-color: #4f81bd;
+            color: #fff;
             border: none;
+            padding: 14px 20px;
+            font-size: 1rem;
             cursor: pointer;
-            text-align: left;
+            border-radius: 8px;
+            margin-left: 10px;
         }
 
-        .faq-content {
-            padding: 10px;
-            background-color: #444;
-            margin-top: 8px;
+        .search-btn:hover {
+            background-color: #3c6b99;
         }
 
-        .faq-button:hover {
-            background-color: #555;
+        /* Browse by Category Section */
+        #categories {
+            margin-top: 50px;
         }
 
-        .faq-item + .faq-item {
-            margin-top: 12px;
+        #categories h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #4f81bd;
         }
 
-        /* Policy Card Styles */
-        .policy-card {
-            background-color: #333;
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .category-card {
+            background-color: #1e1e1e;
             padding: 20px;
             border-radius: 8px;
-            margin-bottom: 16px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        .policy-card h3 {
+        .category-card h3 {
             font-size: 1.2rem;
+            color: #f5f5f5;
         }
 
-        .policy-card p {
-            margin-top: 10px;
-            font-size: 1rem;
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
         }
 
-        /* Responsive Design */
+        /* Responsive Grid Layout */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
+            .category-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
+        }
 
-            .hero p {
-                font-size: 1rem;
+        @media (max-width: 480px) {
+            .category-grid {
+                grid-template-columns: 1fr;
             }
+        }
 
-            .container {
-                padding: 0 16px;
-            }
+        /* Footer Section */
+        footer {
+            background-color: #1e1e1e;
+            padding: 20px 0;
+            text-align: center;
+            color: #bbb;
+        }
+
+        footer ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            padding: 0;
+            margin-bottom: 10px;
+        }
+
+        footer ul li a {
+            color: #4f81bd;
+            text-decoration: none;
+        }
+
+        footer ul li a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
-<body class="bg-gray-900 text-white">
-
-    <!-- Header Section -->
-    <header class="fixed top-0 left-0 w-full bg-gray-800 py-4">
-        <div class="container mx-auto flex justify-between items-center">
-            <a href="/" class="text-2xl font-bold">HS Code Finder</a>
-            <nav>
-                <ul class="flex space-x-6">
-                    <li><a href="#" class="hover:underline">Home</a></li>
-                    <li><a href="#about" class="hover:underline">About</a></li>
-                    <li><a href="#contact" class="hover:underline">Contact</a></li>
-                    <li><a href="#faq" class="hover:underline">FAQ</a></li>
-                </ul>
-            </nav>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-nav">
+                <a class="nav-link" href="#">Home</a>
+                <a class="nav-link" href="#">HS Code</a>
+                <a class="nav-link" href="#">Policies</a>
+                <a class="nav-link" href="#">Documentation</a>
+                <a class="nav-link" href="#">Finance</a>
+                <a class="nav-link" href="#">About</a>
+                <a class="nav-link" href="#">Contact</a>
+            </div>
         </div>
-    </header>
+    </nav>
 
     <!-- Hero Section -->
-    <section class="hero bg-gray-700 text-center py-16">
-        <h1 class="text-4xl font-bold">Quickly Find Your HS Codes for Import/Export</h1>
-        <p class="mt-4 text-lg">Search by Product Name, Keywords, or Browse Popular Categories</p>
-        <div class="mt-8">
-            <input type="text" id="search-bar" class="search-bar p-2 w-3/4 md:w-1/2 text-xl rounded" placeholder="Enter product name or HS code..." />
-            <button class="mt-4 py-2 px-6 bg-blue-500 rounded text-white">Search</button>
-        </div>
-        <div class="mt-8">
-            <a href="#categories" class="btn-category bg-green-500 px-4 py-2 rounded">Browse by Category</a>
+    <section class="hero">
+        <h1>Quickly Find Your HS Codes for Import/Export</h1>
+        <p>Search by Product Name, Keywords, or Browse Popular Categories</p>
+        <div class="search-bar-wrapper">
+            <input type="text" class="search-bar" placeholder="Enter product name or HS code..." />
+            <button class="search-btn">Search</button>
         </div>
     </section>
 
-    <!-- Main Content Section -->
-    <main class="container mx-auto mt-20">
-
-        <!-- Search Results Section -->
-        <section id="search-results" class="mb-16">
-            <h2 class="text-2xl font-semibold">Search Results</h2>
-            <div id="results-list" class="mt-4">
-                <!-- Dynamic results will be displayed here -->
-            </div>
-        </section>
-
-        <!-- Browse by Category Section -->
+    <!-- Main Content -->
+    <main class="container">
         <section id="categories">
-            <h2 class="text-2xl font-semibold mb-4">Browse by Category</h2>
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
-                <div class="category-card bg-gray-600 p-4 rounded">
-                    <h3 class="text-xl font-medium">Electronics</h3>
-                </div>
-                <div class="category-card bg-gray-600 p-4 rounded">
-                    <h3 class="text-xl font-medium">Textiles</h3>
-                </div>
-                <div class="category-card bg-gray-600 p-4 rounded">
-                    <h3 class="text-xl font-medium">Machinery</h3>
-                </div>
-                <div class="category-card bg-gray-600 p-4 rounded">
-                    <h3 class="text-xl font-medium">Furniture</h3>
-                </div>
-            </div>
-        </section>
-
-        <!-- Informational Section -->
-        <section id="about" class="mt-16">
-            <h2 class="text-2xl font-semibold">What are HS Codes?</h2>
-            <p class="mt-4">HS Codes are numerical codes used by customs to classify products for import and export.</p>
-            <div id="faq" class="mt-8">
-                <h3 class="text-xl font-medium">FAQ</h3>
-                <div class="accordion mt-4">
-                    <div class="faq-item">
-                        <button class="faq-button">How to use HS codes?</button>
-                        <div class="faq-content hidden">
-                            <p>HS codes help in identifying products for trade compliance and tariff purposes.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-button">Where are they applicable?</button>
-                        <div class="faq-content hidden">
-                            <p>They are used by governments and trade organizations worldwide to track imports and exports.</p>
-                        </div>
-                    </div>
-                </div>
+            <h2>Browse by Category</h2>
+            <div class="category-grid">
+                <div class="category-card"><h3>Electronics</h3></div>
+                <div class="category-card"><h3>Textiles</h3></div>
+                <div class="category-card"><h3>Machinery</h3></div>
+                <div class="category-card"><h3>Agriculture</h3></div>
+                <div class="category-card"><h3>Furniture</h3></div>
+                <div class="category-card"><h3>Chemicals</h3></div>
+                <div class="category-card"><h3>Food & Beverages</h3></div>
+                <div class="category-card"><h3>Pharmaceuticals</h3></div>
+                <div class="category-card"><h3>Automobiles</h3></div>
             </div>
         </section>
     </main>
 
-    <!-- Footer Section -->
-    <footer class="bg-gray-800 py-8">
-        <div class="container mx-auto flex justify-between items-center">
-            <div>
-                <ul class="flex space-x-6">
-                    <li><a href="#" class="text-white">Home</a></li>
-                    <li><a href="#about" class="text-white">About</a></li>
-                    <li><a href="#contact" class="text-white">Contact</a></li>
-                    <li><a href="#faq" class="text-white">FAQ</a></li>
-                </ul>
-            </div>
-            <div>
-                <p class="text-white text-sm">© 2024 HS Code Finder. All Rights Reserved.</p>
-            </div>
-        </div>
+    <!-- Footer -->
+    <footer>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <p>© 2024 HS Code Finder. All Rights Reserved.</p>
     </footer>
-
-    <!-- Scripts -->
-    <script>
-        // Common functionality (search, FAQ, etc.)
-        document.getElementById('search-bar')?.addEventListener('input', function () {
-            const searchQuery = this.value.toLowerCase();
-            if (searchQuery.length > 2) {
-                searchPolicies(searchQuery);
-            }
-        });
-
-        function searchPolicies(query) {
-            // Your search functionality
-            console.log('Searching for:', query);
-        }
-
-        // FAQ Accordion functionality
-        document.querySelectorAll('.faq-button').forEach(button => {
-            button.addEventListener('click', () => {
-                const content = button.nextElementSibling;
-                content.classList.toggle('hidden');
-            });
-        });
-    </script>
 </body>
 </html>
