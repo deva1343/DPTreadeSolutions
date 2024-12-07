@@ -256,6 +256,54 @@
             <p>Limited-time offer: ₹2499 (50% off)</p>
             <a href="https://wa.me/8459756243?text=hi,%20can%20I%20get%20more%20information%20about%20IEC" class="btn btn-light btn-lg mt-3">Get Started Now</a>
         </div>
+	     <div 
+    class="offer-box" 
+    style="
+        position: absolute;
+        top: 50%; 
+        right: -500px;
+        transform: translateY(-50%);
+        width: 300px;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        background-color: white;
+        text-align: center;
+        font-family: Arial, sans-serif;
+        animation: flyIn 3s ease-in-out forwards;
+    ">
+    <h2 style="color: green; margin: 0;">Exclusive Limited-Time Offer</h2>
+    <p style="margin: 10px 0; font-size: 1.1em; color: gray;">
+        Regular Price: <s>₹5999</s>
+    </p>
+    <p style="margin: 10px 0; font-size: 1.5em; font-weight: bold; color: red;">
+        Today Only: ₹1999!
+    </p>
+</div>
+
+<script>
+    const animateOfferBox = () => {
+        const offerBox = document.querySelector('.offer-box');
+        offerBox.style.animation = 'flyIn 3s ease-in-out forwards';
+    };
+
+    // Trigger the animation after a small delay for better effect
+    setTimeout(animateOfferBox, 500);
+</script>
+
+<style>
+    @keyframes flyIn {
+        0% {
+            right: -500px;
+        }
+        100% {
+            right: 20px;
+        }
+    }
+</style>
+
+ 
+
     </section>
 
     <!-- About Section -->
