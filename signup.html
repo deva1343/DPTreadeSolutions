@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
@@ -11,6 +12,108 @@
     
     <!-- Content Security Policy (CSP) to allow Google Sign-In -->
     <meta http-equiv="Content-Security-Policy" content="frame-ancestors 'self' https://accounts.google.com; connect-src 'self' https://97ac-103-82-43-30.ngrok-free.app;"/>
+
+<style>
+       /* General Styles for Sign Up Page */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.signup-container {
+    text-align: center;
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.signup-container h2 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Form Styles */
+.signup-container form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.signup-container label {
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-align: left;
+    color: #555;
+}
+
+.signup-container input {
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    width: calc(100% - 24px);
+    box-sizing: border-box;
+}
+
+/* Sign-Up Button Styling */
+.signup-container .signup-btn {
+    background: linear-gradient(135deg, #f04e30, #f09433);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.signup-container .signup-btn:hover {
+    background: linear-gradient(135deg, #d6452b, #f08c33);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(-3px);
+}
+
+/* Google Sign-In Styling */
+.g_id_signin {
+    margin: 20px auto;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 14px;
+}
+
+/* Responsive Design for Small Screens */
+@media (max-width: 600px) {
+    .signup-container {
+        width: 90%;
+        margin: 50px auto;
+    }
+
+    .signup-container .signup-btn {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+}
+    </style>
+
 </head>
 <body>
     <div class="signup-container">
