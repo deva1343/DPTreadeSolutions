@@ -18,6 +18,11 @@
         }
         .dropdown-menu {
             background-color: white;
+            display: none;
+            position: absolute;
+        }
+        .nav-item:hover .dropdown-menu {
+            display: block;
         }
         .dropdown-menu .dropdown-item {
             color: #2A2A72;
@@ -79,7 +84,7 @@
                     <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">HS Code</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Services</a>
+                        <a class="nav-link dropdown-toggle" href="#" role="button">Services</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">IE License</a></li>
                             <li><a class="dropdown-item" href="#">Shop Act License</a></li>
@@ -91,7 +96,6 @@
                         </ul>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="#">CHA</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Loan</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">IE Regulation & Policies</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Documentation</a></li>
@@ -125,8 +129,8 @@
             <div class="col-md-4">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">GSTIN Registration</h5>
-                        <p class="card-text">We assist with GSTIN registration for your business.</p>
+                        <h5 class="card-title">Shop Act License</h5>
+                        <p class="card-text">Register your business under the Shop Act.</p>
                         <a href="#" class="btn btn-primary">Learn More</a>
                     </div>
                 </div>
@@ -134,14 +138,17 @@
             <div class="col-md-4">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Product Report</h5>
-                        <p class="card-text">Comprehensive insights and reports on your products.</p>
+                        <h5 class="card-title">GSTIN Registration</h5>
+                        <p class="card-text">We assist with GSTIN registration for your business.</p>
                         <a href="#" class="btn btn-primary">Learn More</a>
                     </div>
                 </div>
             </div>
+            <!-- Add more service cards as needed -->
         </div>
     </section>
+
+ 
 
     <!-- Footer -->
     <footer>
