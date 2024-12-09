@@ -33,14 +33,24 @@
             padding: 80px 20px;
         }
         .hero-section h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
+            font-weight: bold;
         }
         .hero-section p {
-            font-size: 1.2rem;
+            font-size: 1.5rem;
+        }
+        .hero-section button {
+            background-color: #FFD700;
+            color: #2A2A72;
+            font-weight: bold;
         }
         .card {
             border: none;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: scale(1.05);
         }
         footer {
             background-color: #2A2A72;
@@ -48,7 +58,7 @@
             padding: 20px;
         }
         footer a {
-            color: #009FFD;
+            color: #FFD700;
             text-decoration: none;
         }
         footer a:hover {
@@ -76,6 +86,8 @@
                             <li><a class="dropdown-item" href="#">GSTIN Registration</a></li>
                             <li><a class="dropdown-item" href="#">Port Registration</a></li>
                             <li><a class="dropdown-item" href="#">Marketing</a></li>
+                            <li><a class="dropdown-item" href="#">Product Report</a></li>
+                            <li><a class="dropdown-item" href="#">CHA Service</a></li>
                         </ul>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="#">CHA</a></li>
@@ -122,8 +134,8 @@
             <div class="col-md-4">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Marketing</h5>
-                        <p class="card-text">Boost your product visibility with expert marketing solutions.</p>
+                        <h5 class="card-title">Product Report</h5>
+                        <p class="card-text">Comprehensive insights and reports on your products.</p>
                         <a href="#" class="btn btn-primary">Learn More</a>
                     </div>
                 </div>
