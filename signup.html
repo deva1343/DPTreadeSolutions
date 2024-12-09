@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="signup.css">
+    
+    <!-- Google Sign-In API -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    
+    <!-- Content Security Policy (CSP) to allow Google Sign-In -->
+    <meta http-equiv="Content-Security-Policy" content="frame-ancestors 'self' https://accounts.google.com; connect-src 'self' https://97ac-103-82-43-30.ngrok-free.app;"/>
+</head>
+<body>
+    <div class="signup-container">
+        <h2>Sign Up</h2>
+
+        <form id="signupForm">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit" class="signup-btn">Sign Up</button>
+        </form>
+
+        <!-- Google Sign-In Button -->
+        <div id="g_id_onload"
+            data-client_id="14068931430-4n1tqetmn1iqn3cfutckvplahpd3ppla.apps.googleusercontent.com"
+            data-context="signup"
+            data-ux_mode="popup"
+            data-callback="handleCredentialResponse"
+            data-auto_prompt="false">
+        </div>
+        <div class="g_id_signin" data-type="standard"></div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 AI Music Generator. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Handle Google Sign-In Response -->
+    <script>
+        // Function to handle the Google Sign-In response
+        function handleCredentialResponse(response) {
+            const data = jwt_decode(response.credential);
+            console.log("Google ID Token:", data);
+
+            // Send the ID Token to your server for further validation
+            fetch('https://97ac-103-82-43-30.ngrok-free.app/google-signup', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ id_token: response.credential })
+            })
+            .then(response => response.json())
+            .then(result => {
+                console.log(result);
+                if (result.success) {
+                    alert('Google Sign-In successful!');
+                    window.location.href = 'https://deva1343.github.io/gaana.ai/sign-in.html'; // Redirect to sign-in page
+                } else {
+                    alert(result.message || 'Google Sign-In failed');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again.');
+            });
+        }
+
+        // Google Sign-In Button Rendering
+        window.onload = function() {
+            google.accounts.id.initialize({
+                client_id: "14068931430-4n1tqetmn1iqn3cfutckvplahpd3ppla.apps.googleusercontent.com",
+                callback: handleCredentialResponse
+            });
+            google.accounts.id.renderButton(
+                document.querySelector(".g_id_signin"),
+                { theme: "outline", size: "large" }
+            );
+        };
+    </script>
+
+    <!-- JWT Decode Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-jwt-decode/3.1.0/jwt-decode.min.js"></script>
+</body>
+</html>
