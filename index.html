@@ -364,12 +364,20 @@
 
 <!-- Google Sign-In SDK -->
 <script src="https://accounts.google.com/gsi/client" async defer></script>
-
 <script>
-    // Dropdown Menu Fix for Mobile
+    // Dropdown Menu Fix for Mobile and Desktop
     document.querySelectorAll('.dropdown-toggle').forEach(dropdown => {
-        dropdown.addEventListener('click', function() {
-            this.nextElementSibling.classList.toggle('show');
+        dropdown.addEventListener('click', function (e) {
+            // Toggle the dropdown only if the target is a dropdown-toggle link
+            const dropdownMenu = this.nextElementSibling;
+            dropdownMenu.classList.toggle('show');
+
+            // Close the dropdown when clicking outside
+            document.addEventListener('click', function (event) {
+                if (!dropdown.contains(event.target)) {
+                    dropdownMenu.classList.remove('show');
+                }
+            });
         });
     });
 
@@ -390,8 +398,6 @@
         );
     };
 </script>
-
-
 
 
 </body>
