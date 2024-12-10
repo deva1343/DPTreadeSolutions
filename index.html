@@ -356,27 +356,32 @@
         </div>
     </footer>
 
+    
+    
     <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <!-- Bootstrap Bundle (includes Bootstrap JS and Popper.js) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-    <script>
-        // Dropdown Menu Fix for Mobile
-        document.querySelectorAll('.dropdown-toggle').forEach(dropdown => {
-            dropdown.addEventListener('click', function() {
-                this.nextElementSibling.classList.toggle('show');
-            });
+<!-- Google Sign-In SDK -->
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+
+<script>
+    // Dropdown Menu Fix for Mobile
+    document.querySelectorAll('.dropdown-toggle').forEach(dropdown => {
+        dropdown.addEventListener('click', function() {
+            this.nextElementSibling.classList.toggle('show');
         });
+    });
 
-	//Add details
-	function handleCredentialResponse(response) {
+    // Google Sign-In Handling
+    function handleCredentialResponse(response) {
         console.log("Encoded JWT ID token: " + response.credential);
         // Pass the token to your backend for verification.
     }
 
     window.onload = function () {
         google.accounts.id.initialize({
-            client_id: "YOUR_GOOGLE_CLIENT_ID",
+            client_id: "YOUR_GOOGLE_CLIENT_ID", // Replace with your actual Google client ID
             callback: handleCredentialResponse
         });
         google.accounts.id.renderButton(
@@ -384,10 +389,8 @@
             { theme: "outline", size: "large" } // Customizations
         );
     };
+</script>
 
-
-
-    </script>
 
 
 
