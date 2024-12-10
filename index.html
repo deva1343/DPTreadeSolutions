@@ -31,41 +31,122 @@
             background-color: #009FFD;
             color: white;
         }
+
+        :root {
+            --primary-color: #FF6F61;
+            --secondary-color: #FDCB82;
+            --text-color: white;
+            --shadow-color: rgba(0, 0, 0, 0.5);
+        }
+
         .hero-section {
-            background: linear-gradient(to bottom right, #2A2A72, #009FFD);
-            color: white;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            padding: 100px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            padding: 80px 20px;
         }
-        .hero-section h1 {
-            font-size: 3.5rem;
+
+        .container h1 {
+            color: var(--text-color);
+            font-size: 2.5rem;
             font-weight: bold;
+            text-shadow: 2px 2px 5px var(--shadow-color);
+            margin-bottom: 20px;
         }
-        .hero-section p {
-            font-size: 1.5rem;
+
+        .container p {
+            color: var(--text-color);
+            font-size: 1.1rem;
+            font-weight: 300;
+            margin-bottom: 40px;
+            text-shadow: 1px 1px 3px var(--shadow-color);
         }
-        .hero-section button {
-            background-color: #FFD700;
-            color: #2A2A72;
-            font-weight: bold;
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
         }
+
+        .btn {
+            font-size: 1.1rem;
+            padding: 15px 30px;
+            border-radius: 50px;
+            box-shadow: 0 4px 10px var(--shadow-color);
+            text-decoration: none;
+            color: var(--text-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px var(--shadow-color);
+        }
+
+        .btn.sign-in {
+            background-color: var(--primary-color);
+        }
+
+        .btn.sign-up {
+            background-color: var(--secondary-color);
+        }
+
+        @media (max-width: 768px) {
+            .container h1 {
+                font-size: 2rem;
+            }
+
+            .container p {
+                font-size: 1rem;
+            }
+
+            .btn {
+                font-size: 1rem;
+                padding: 12px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container h1 {
+                font-size: 1.5rem;
+            }
+
+            .container p {
+                font-size: 0.9rem;
+            }
+
+            .btn {
+                font-size: 0.9rem;
+                padding: 10px 15px;
+            }
+        }
+
         .card {
             border: none;
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease;
         }
+
         .card:hover {
             transform: scale(1.05);
         }
+
         footer {
             background-color: #2A2A72;
             color: white;
             padding: 20px;
         }
+
         footer a {
             color: #FFD700;
             text-decoration: none;
         }
+
         footer a:hover {
             text-decoration: underline;
         }
@@ -73,102 +154,83 @@
 </head>
 <body>
     <!-- Navbar -->
-     <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background: linear-gradient(45deg, #FF6F61, #FDCB82);">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#" style="font-size: 1.5rem; font-weight: bold; color: white; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);">Import Export Buddy</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="https://deva1343.github.io/DPTreadeSolutions/index.html" style="color: white; font-weight: 500; font-size: 1.1rem; padding: 10px 20px; transition: color 0.3s ease;">
-                        Home
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="https://deva1343.github.io/DPTreadeSolutions/hscode.html" style="color: white; font-weight: 500; font-size: 1.1rem; padding: 10px 20px; transition: color 0.3s ease;">
-                        HS Code
-                    </a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" style="color: white; font-weight: 500; font-size: 1.1rem;">
-                        Services
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="https://deva1343.github.io/DPTreadeSolutions/iecode.html">IE License</a></li>
-                        <li><a class="dropdown-item" href="#">Shop Act License</a></li>
-                        <li><a class="dropdown-item" href="#">GSTIN Registration</a></li>
-                        <li><a class="dropdown-item" href="#">Port Registration</a></li>
-                        <li><a class="dropdown-item" href="#">Marketing</a></li>
-                        <li><a class="dropdown-item" href="#">Product Report</a></li>
-                        <li><a class="dropdown-item" href="https://deva1343.github.io/DPTreadeSolutions/cha.html">CHA Service</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="https://deva1343.github.io/DPTreadeSolutions/cha.html" style="color: white; font-weight: 500; font-size: 1.1rem; padding: 10px 20px; transition: color 0.3s ease;">
-                        CHA
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="https://deva1343.github.io/DPTreadeSolutions/loan.html" style="color: white; font-weight: 500; font-size: 1.1rem; padding: 10px 20px; transition: color 0.3s ease;">
-                        Loan
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="https://deva1343.github.io/DPTreadeSolutions/ierp.html" style="color: white; font-weight: 500; font-size: 1.1rem; padding: 10px 20px; transition: color 0.3s ease;">
-                        IE Regulation & Policies
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="https://deva1343.github.io/DPTreadeSolutions/documentation.html" style="color: white; font-weight: 500; font-size: 1.1rem; padding: 10px 20px; transition: color 0.3s ease;">
-                        Documentation
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="https://deva1343.github.io/DPTreadeSolutions/about.html" style="color: white; font-weight: 500; font-size: 1.1rem; padding: 10px 20px; transition: color 0.3s ease;">
-                        About
-                    </a>
-                </li>
-            </ul>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background: linear-gradient(45deg, #FF6F61, #FDCB82);">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#" style="font-size: 1.5rem; font-weight: bold; color: white; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);">Import Export Buddy</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://deva1343.github.io/DPTreadeSolutions/index.html" style="color: white; font-weight: 500; font-size: 1.1rem; padding: 10px 20px; transition: color 0.3s ease;">
+                            Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://deva1343.github.io/DPTreadeSolutions/hscode.html" style="color: white; font-weight: 500; font-size: 1.1rem; padding: 10px 20px; transition: color 0.3s ease;">
+                            HS Code
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" style="color: white; font-weight: 500; font-size: 1.1rem;">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://deva1343.github.io/DPTreadeSolutions/iecode.html">IE License</a></li>
+                            <li><a class="dropdown-item" href="#">Shop Act License</a></li>
+                            <li><a class="dropdown-item" href="#">GSTIN Registration</a></li>
+                            <li><a class="dropdown-item" href="#">Port Registration</a></li>
+                            <li><a class="dropdown-item" href="#">Marketing</a></li>
+                            <li><a class="dropdown-item" href="#">Product Report</a></li>
+                            <li><a class="dropdown-item" href="https://deva1343.github.io/DPTreadeSolutions/cha.html">CHA Service</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://deva1343.github.io/DPTreadeSolutions/cha.html" style="color: white; font-weight: 500; font-size: 1.1rem; padding: 10px 20px; transition: color 0.3s ease;">
+                            CHA
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://deva1343.github.io/DPTreadeSolutions/loan.html" style="color: white; font-weight: 500; font-size: 1.1rem; padding: 10px 20px; transition: color 0.3s ease;">
+                            Loan
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://deva1343.github.io/DPTreadeSolutions/ierp.html" style="color: white; font-weight: 500; font-size: 1.1rem; padding: 10px 20px; transition: color 0.3s ease;">
+                            IE Regulation & Policies
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://deva1343.github.io/DPTreadeSolutions/documentation.html" style="color: white; font-weight: 500; font-size: 1.1rem; padding: 10px 20px; transition: color 0.3s ease;">
+                            Documentation
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://deva1343.github.io/DPTreadeSolutions/about.html" style="color: white; font-weight: 500; font-size: 1.1rem; padding: 10px 20px; transition: color 0.3s ease;">
+                            About
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
-
+    </nav>
 
     <!-- Hero Section -->
-   <section class="hero-section" style="background: linear-gradient(45deg, #FF6F61, #FDCB82); padding: 100px 0;">
-    <div class="container text-center">
-        <h1 style="color: white; font-size: 3rem; font-weight: bold; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);">Welcome to Import Export Buddy</h1>
-        <p style="color: white; font-size: 1.25rem; font-weight: 300; margin-top: 20px; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);">
-            Your trusted partner for seamless global trade.
-        </p>
-        <div class="d-flex justify-content-center mt-5 gap-4">
-            <!-- Sign In Button -->
-            <a href="https://deva1343.github.io/DPTreadeSolutions/signin.html" class="btn" style="background-color: #FF6F61; color: white; font-size: 1.1rem; padding: 15px 30px; border-radius: 50px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); transition: all 0.3s ease;">
-                Sign In
-            </a>
-            <!-- Sign Up Button -->
-            <a href="https://deva1343.github.io/DPTreadeSolutions/signup.html" class="btn" style="background-color: #FDCB82; color: white; font-size: 1.1rem; padding: 15px 30px; border-radius: 50px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); transition: all 0.3s ease;">
-                Sign Up
-            </a>
-            <!-- Google Login Button -->
-            <button class="btn d-flex align-items-center" style="background-color: #fff; color: #4285F4; font-size: 1.1rem; padding: 12px 28px; border-radius: 50px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); transition: all 0.3s ease;">
-                <img 
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" 
-                    alt="Google Logo" 
-                    style="width: 20px; height: 20px; margin-right: 8px;"
-                >
-                Login with Google
-            </button>
+    <section class="hero-section">
+        <div class="container">
+            <h1>Welcome to Import Export Buddy</h1>
+            <p>Your trusted partner for seamless global trade.</p>
+            <div class="button-group">
+                <!-- Sign In Button -->
+                <a href="https://deva1343.github.io/DPTreadeSolutions/signin.html" class="btn sign-in" target="_blank">Sign In</a>
+                <!-- Sign Up Button -->
+                <a href="https://deva1343.github.io/DPTreadeSolutions/signup.html" class="btn sign-up" target="_blank">Sign Up</a>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-
-
-
-    <!-- Services Section -->
+<!-- Services Section -->
 		<section class="container my-5">
     <h2 class="text-center mb-4">Our Services</h2>
     <div class="row g-4">
@@ -264,16 +326,11 @@
         </div>
     </div>
 </section>
-
-
-
- 
-
     <!-- Footer -->
     <footer>
         <div class="container text-center">
-            <p>&copy; 2024 Import Export Buddy. All Rights Reserved.</p>
-            <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+            <p>&copy; 2024 Import Export Buddy. All rights reserved.</p>
+            <p><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
         </div>
     </footer>
 
@@ -282,7 +339,15 @@
     <script src="https://accounts.google.com/gsi/client" async defer></script>
 
     <script>
-    function handleCredentialResponse(response) {
+        // Dropdown Menu Fix for Mobile
+        document.querySelectorAll('.dropdown-toggle').forEach(dropdown => {
+            dropdown.addEventListener('click', function() {
+                this.nextElementSibling.classList.toggle('show');
+            });
+        });
+
+	//Add details
+	function handleCredentialResponse(response) {
         console.log("Encoded JWT ID token: " + response.credential);
         // Pass the token to your backend for verification.
     }
@@ -297,7 +362,12 @@
             { theme: "outline", size: "large" } // Customizations
         );
     };
-</script>
+
+
+
+    </script>
+
+
 
 </body>
 </html>
