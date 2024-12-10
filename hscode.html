@@ -5,176 +5,185 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HS Code Finder</title>
     <style>
-        /* Global Styles */
-        body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #121212;
-            color: #f5f5f5;
-        }
+    /* Global Styles */
+    body {
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #121212;
+        color: #f5f5f5;
+    }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
 
-        /* Navbar Styles */
-        nav.navbar {
-            background-color: #1e1e1e;
-            padding: 10px 0;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
+    /* Navbar Styles */
+    nav.navbar {
+        background-color: #1e1e1e;
+        padding: 15px 0; /* Increased padding for better height */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        position: fixed; /* Fixed position to stay on top during scroll */
+        width: 100%;
+        top: 0;
+        z-index: 999; /* Ensures it stays on top */
+    }
 
-        nav.navbar .navbar-nav {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
+    nav.navbar .navbar-nav {
+        display: flex;
+        justify-content: center;
+        align-items: center; /* Ensures vertical alignment */
+        gap: 30px; /* Increased space between links */
+    }
 
-        nav.navbar .nav-link {
-            color: #f5f5f5;
-            text-decoration: none;
-            font-size: 16px;
-            padding: 8px 16px;
-        }
+    nav.navbar .nav-link {
+        color: #f5f5f5;
+        text-decoration: none;
+        font-size: 18px; /* Increased font size for better visibility */
+        padding: 12px 20px; /* Adjusted padding for better touch area */
+        transition: color 0.3s ease;
+    }
 
-        nav.navbar .nav-link:hover {
-            color: #4f81bd;
-        }
+    nav.navbar .nav-link:hover {
+        color: #4facfe; /* Consistent hover color */
+    }
 
-        /* Hero Section Styles */
-        .hero {
-            text-align: center;
-            padding: 100px 20px;
-            background: linear-gradient(90deg, #3a7bd5, #3a6073);
-            color: #fff;
-        }
+    /* Hero Section Styles */
+    .hero {
+        text-align: center;
+        padding: 100px 20px;
+        background: linear-gradient(90deg, #4facfe, #00f2fe);
+        color: #fff;
+        margin-top: 70px; /* Adjust for navbar height */
+    }
 
-        .hero h1 {
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
+    .hero h1 {
+        font-size: 3rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
 
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-        }
+    .hero p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+    }
 
-        .search-bar-wrapper {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
+    .search-bar-wrapper {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
 
-        .search-bar {
-            background-color: #2d2d2d;
-            border: 1px solid #444;
-            color: #f5f5f5;
-            padding: 15px;
-            width: 70%;
-            font-size: 1rem;
-            border-radius: 8px;
-        }
+    .search-bar {
+        background-color: #2d2d2d;
+        border: 1px solid #444;
+        color: #f5f5f5;
+        padding: 15px;
+        width: 70%;
+        font-size: 1rem;
+        border-radius: 8px;
+    }
 
-        .search-bar:focus {
-            outline: none;
-            border-color: #4f81bd;
-        }
+    .search-bar:focus {
+        outline: none;
+        border-color: #4facfe;
+    }
 
-        .search-btn {
-            background-color: #4f81bd;
-            color: #fff;
-            border: none;
-            padding: 14px 20px;
-            font-size: 1rem;
-            cursor: pointer;
-            border-radius: 8px;
-            margin-left: 10px;
-        }
+    .search-btn {
+        background-color: #4facfe;
+        color: #fff;
+        border: none;
+        padding: 14px 20px;
+        font-size: 1rem;
+        cursor: pointer;
+        border-radius: 8px;
+        margin-left: 10px;
+    }
 
-        .search-btn:hover {
-            background-color: #3c6b99;
-        }
+    .search-btn:hover {
+        background-color: #3c6b99;
+    }
 
-        /* Browse by Category Section */
-        #categories {
-            margin-top: 50px;
-        }
+    /* Browse by Category Section */
+    #categories {
+        margin-top: 50px;
+    }
 
-        #categories h2 {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: #4f81bd;
-        }
+    #categories h2 {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 20px;
+        color: #4facfe;
+    }
 
+    .category-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .category-card {
+        background-color: #1e1e1e;
+        padding: 20px;
+        border-radius: 8px;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .category-card h3 {
+        font-size: 1.2rem;
+        color: #f5f5f5;
+    }
+
+    .category-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Responsive Grid Layout */
+    @media (max-width: 768px) {
         .category-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+            grid-template-columns: repeat(2, 1fr);
         }
+    }
 
-        .category-card {
-            background-color: #1e1e1e;
-            padding: 20px;
-            border-radius: 8px;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s, box-shadow 0.3s;
+    @media (max-width: 480px) {
+        .category-grid {
+            grid-template-columns: 1fr;
         }
+    }
 
-        .category-card h3 {
-            font-size: 1.2rem;
-            color: #f5f5f5;
-        }
+    /* Footer Section */
+    footer {
+        background-color: #1e1e1e;
+        padding: 20px 0;
+        text-align: center;
+        color: #bbb;
+    }
 
-        .category-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-        }
+    footer ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        padding: 0;
+        margin-bottom: 10px;
+    }
 
-        /* Responsive Grid Layout */
-        @media (max-width: 768px) {
-            .category-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
+    footer ul li a {
+        color: #4facfe;
+        text-decoration: none;
+    }
 
-        @media (max-width: 480px) {
-            .category-grid {
-                grid-template-columns: 1fr;
-            }
-        }
+    footer ul li a:hover {
+        text-decoration: underline;
+    }
+</style>
 
-        /* Footer Section */
-        footer {
-            background-color: #1e1e1e;
-            padding: 20px 0;
-            text-align: center;
-            color: #bbb;
-        }
 
-        footer ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            padding: 0;
-            margin-bottom: 10px;
-        }
-
-        footer ul li a {
-            color: #4f81bd;
-            text-decoration: none;
-        }
-
-        footer ul li a:hover {
-            text-decoration: underline;
-        }
-    </style>
 </head>
 <body>
     <!-- Navbar -->
