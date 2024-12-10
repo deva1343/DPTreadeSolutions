@@ -43,6 +43,36 @@
         color: var(--highlight-color);
     }
 
+    /* Dropdown styling */
+    .nav-item.dropdown .dropdown-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #f8f9fa;
+        border-radius: 4px;
+    }
+
+    .nav-item.dropdown:hover .dropdown-menu {
+        display: block;
+    }
+
+    .dropdown-menu {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        min-width: 180px;
+    }
+
+    .dropdown-item {
+        font-size: 1rem;
+        padding: 12px 20px;
+        color: #333;
+    }
+
+    .dropdown-item:hover {
+        background-color: var(--primary-color);
+        color: white;
+    }
+
     /* Hero section */
     .hero-section {
         background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
@@ -169,73 +199,75 @@
         }
     }
 </style>
-
-
+ 
 
 </head>
 <body>
+    
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background: linear-gradient(45deg, #FF6F61, #FDCB82);">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#" style="font-size: 1.5rem; font-weight: bold; color: white; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);">Import Export Buddy</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://deva1343.github.io/DPTreadeSolutions/index.html" style="color: white; font-weight: 500; font-size: 1.1rem; padding: 10px 20px; transition: color 0.3s ease;">
-                            Home
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://deva1343.github.io/DPTreadeSolutions/hscode.html" style="color: white; font-weight: 500; font-size: 1.1rem; padding: 10px 20px; transition: color 0.3s ease;">
-                            HS Code
-                        </a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" style="color: black; font-weight: 500; font-size: 1.1rem;">
-                            Services
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="https://deva1343.github.io/DPTreadeSolutions/iecode.html">IE License</a></li>
-                            <li><a class="dropdown-item" href="#">Shop Act License</a></li>
-                            <li><a class="dropdown-item" href="#">GSTIN Registration</a></li>
-                            <li><a class="dropdown-item" href="#">Port Registration</a></li>
-                            <li><a class="dropdown-item" href="#">Marketing</a></li>
-                            <li><a class="dropdown-item" href="#">Product Report</a></li>
-                            <li><a class="dropdown-item" href="https://deva1343.github.io/DPTreadeSolutions/cha.html">CHA Service</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://deva1343.github.io/DPTreadeSolutions/cha.html" style="color: white; font-weight: 500; font-size: 1.1rem; padding: 10px 20px; transition: color 0.3s ease;">
-                            CHA
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://deva1343.github.io/DPTreadeSolutions/loan.html" style="color: white; font-weight: 500; font-size: 1.1rem; padding: 10px 20px; transition: color 0.3s ease;">
-                            Loan
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://deva1343.github.io/DPTreadeSolutions/ierp.html" style="color: white; font-weight: 500; font-size: 1.1rem; padding: 10px 20px; transition: color 0.3s ease;">
-                            IE Regulation & Policies
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://deva1343.github.io/DPTreadeSolutions/documentation.html" style="color: white; font-weight: 500; font-size: 1.1rem; padding: 10px 20px; transition: color 0.3s ease;">
-                            Documentation
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://deva1343.github.io/DPTreadeSolutions/about.html" style="color: white; font-weight: 500; font-size: 1.1rem; padding: 10px 20px; transition: color 0.3s ease;">
-                            About
-                        </a>
-                    </li>
-                </ul>
-            </div>
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background: linear-gradient(45deg, #FF6F61, #FDCB82);">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#" style="font-size: 1.5rem; font-weight: bold; color: white; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);">Import Export Buddy</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="https://deva1343.github.io/DPTreadeSolutions/index.html" style="color: white; font-weight: 500; font-size: 1.1rem; padding: 10px 20px; transition: color 0.3s ease;">
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://deva1343.github.io/DPTreadeSolutions/hscode.html" style="color: white; font-weight: 500; font-size: 1.1rem; padding: 10px 20px; transition: color 0.3s ease;">
+                        HS Code
+                    </a>
+                </li>
+                <!-- Services dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" style="color: black; font-weight: 500; font-size: 1.1rem;">
+                        Services
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="https://deva1343.github.io/DPTreadeSolutions/iecode.html">IE License</a></li>
+                        <li><a class="dropdown-item" href="#">Shop Act License</a></li>
+                        <li><a class="dropdown-item" href="#">GSTIN Registration</a></li>
+                        <li><a class="dropdown-item" href="#">Port Registration</a></li>
+                        <li><a class="dropdown-item" href="#">Marketing</a></li>
+                        <li><a class="dropdown-item" href="#">Product Report</a></li>
+                        <li><a class="dropdown-item" href="https://deva1343.github.io/DPTreadeSolutions/cha.html">CHA Service</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://deva1343.github.io/DPTreadeSolutions/cha.html" style="color: white; font-weight: 500; font-size: 1.1rem; padding: 10px 20px; transition: color 0.3s ease;">
+                        CHA
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://deva1343.github.io/DPTreadeSolutions/loan.html" style="color: white; font-weight: 500; font-size: 1.1rem; padding: 10px 20px; transition: color 0.3s ease;">
+                        Loan
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://deva1343.github.io/DPTreadeSolutions/ierp.html" style="color: white; font-weight: 500; font-size: 1.1rem; padding: 10px 20px; transition: color 0.3s ease;">
+                        IE Regulation & Policies
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://deva1343.github.io/DPTreadeSolutions/documentation.html" style="color: white; font-weight: 500; font-size: 1.1rem; padding: 10px 20px; transition: color 0.3s ease;">
+                        Documentation
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://deva1343.github.io/DPTreadeSolutions/about.html" style="color: white; font-weight: 500; font-size: 1.1rem; padding: 10px 20px; transition: color 0.3s ease;">
+                        About
+                    </a>
+                </li>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
+
 
     <!-- Hero Section -->
    <section class="hero-section">
